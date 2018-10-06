@@ -11,11 +11,11 @@ hits <- replicate(100, {
       w <- w[-which(w %in% p)] #if prediction is right, "turn over" second card
       k = p #treat second card as first, and repeat until no cards left
    }
-   else {break} #leave loop if prediction wrong
+   else {break} #leave loop if the prediction is wrong
    }
    length(w) == 0 #if we get through all of the cards, call it a win!
    })
-  mean(success) #average the sucess
+  mean(success) #average the successes
 })
 mean(hits)
 hist(hits)
