@@ -17,5 +17,5 @@ hits <- replicate(100, {
    })
   mean(success) #average the successes
 })
-mean(hits)
+mean(hits) #find the probability
 hist(hits)
