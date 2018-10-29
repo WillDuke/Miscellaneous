@@ -13,7 +13,7 @@
 
 hits <- replicate(100, {
     success <- replicate(1000, {
-        deck <- sample(2:100) #our random set of 9 cards
+        deck <- sample(2:10) #our random set of 9 cards
         first <- deck[1] #the first card
         deck <- deck[-which(deck %in% first)] #take the first card out of the deck
       while (length(deck) > 0){ #repeat until no cards remain
@@ -35,3 +35,6 @@ mean(hits) #find the probability
 #change to 2:20 and the probability drops to ~0.9%
 #change to 2:100 the probability drops to (near) zero -- no hits from 1000000 tries!
 hist(hits)
+
+
+
