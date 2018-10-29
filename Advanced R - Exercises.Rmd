@@ -1,0 +1,44 @@
+---
+title: "Advanced R — Exercises"
+author: "William Duke"
+date: "10/28/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#Foundations
+
+##Names and values
+
+###2.2.2 Exercises
+
+1. The following code in fact binds the names a,b,c, and d to a vector of integers from 1:10.
+```{r}
+a <- 1:10
+b <- a
+c <- b
+d <- 1:10
+```
+
+2. All reference functions find mean in the same place in memory.
+```{r}
+library(lobstr)
+obj_addr(mean)
+mean
+base::mean
+get("mean")
+evalq(mean)
+match.fun("mean")
+?make.names
+```
+
+3. Automatic conversion of non-syntactic names may not be the user's intention, if `read.csv` converts them without warning. This function can be turned off by setting `check.names` to `FALSE`.
+
+4. `make.names` uses a series of rules to make names syntactic: The character "X" is prepended if necessary. All invalid characters are translated to ".". A missing value is translated to "NA". Names which match R keywords have a dot appended to them. Duplicated values are altered by make.unique.
+
+5. 
+4.
+
