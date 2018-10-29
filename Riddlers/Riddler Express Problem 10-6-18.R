@@ -10,7 +10,6 @@
 #
 # Extra credit: What if there were more cards — 2 through 20, or 2 through 100?
 # How do your chances of getting to the end change?
-file.path(file = "sample.csv")
 hits <- replicate(100, {
     success <- replicate(1000, {
         deck <- sample(2:10) #our random set of 9 cards
@@ -36,7 +35,6 @@ mean(hits) #find the probability
 #change to 2:100 the probability drops to (near) zero -- no hits from 1000000 tries!
 hist(hits)
 
-
 success <- replicate(1000000, {
   deck <- sample(2:100) #our random set of 9 cards
   first <- deck[1] #the first card
@@ -55,4 +53,5 @@ success <- replicate(1000000, {
 })
   sum(success) #average the successes
 mean(hits) #find the probability
+
 
